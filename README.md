@@ -7,17 +7,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-This is a rebuild of the website Patreon.com.
+This is a rebuild of the website Patreon.com. The site will allow "creators" to post images to a feed, and allow other site users to view that feed. Creator page and posting may be accessed through the "Log In" link in the navbar.
 
 *GitHub repo:* https://github.com/joelaphoto/PatreonRebuild
 
-## Planned Features
+## Completed Features
 1. Static Top Navbar
-2. Landing/Welcome Page
-3. Creator Page
-4. Image/Text Posting
-5. Patron Feed w/ Posts
+3. Image/Text Posting through image URL's
 
+## Features in Progress
+1. Landing/Welcome Page
+2. Creator Page
+
+## Planned Features
+1. User Feed w/ Posts
+2. Image/Text Posting through Firebase
 
 ## Setup/Installation Requirements
 Requires Node.js, Angular CLI
