@@ -12,10 +12,11 @@ This is a rebuild of the website Patreon.com.
 *GitHub repo:* https://github.com/joelaphoto/PatreonRebuild
 
 ## Planned Features
-1. Static Navbar
+1. Static Top Navbar
 2. Landing/Welcome Page
 3. Creator Page
-4. Patron Feed w/ Posts
+4. Image/Text Posting
+5. Patron Feed w/ Posts
 
 
 ## Setup/Installation Requirements
@@ -35,8 +36,6 @@ Requires Node.js, Angular CLI
 * Javascript
 * Atom
 * Webpack
-* BetterDoctor API
-
 
 ## Support and contact details
 

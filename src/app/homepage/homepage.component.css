@@ -7,7 +7,7 @@
   width: 100%
 }
 
-#subText, #tools {
+#subText, #tools, #meet {
   text-align: center;
 }
 
@@ -28,6 +28,12 @@
   color: white;
 }
 
+.greyBg {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: #F3F4F5;
+}
+
 #perksUl{
   position: relative;
   right: 90px;
@@ -38,4 +44,14 @@
 li {
   font-weight: bold;
   padding-bottom: 25px
+}
+.creatorCard {
+  width: 600px;
+}
+.creatorImg {
+  width: 275px;
+}
+
+.creatorNameOrg {
+  color: #F96854;
 }
