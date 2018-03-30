@@ -1,46 +1,37 @@
 .wrapper {
   /* position: absolute; */
 }
-
 .wrapper, #homepageImg {
   height: auto;
   width: 100%
 }
-
 #subText, #tools, #meet {
   text-align: center;
 }
-
 .whiteBg {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-
 #creatorType {
   color: #F96854;
 }
-
 .blueBg {
   padding-top: 75px;
   padding-bottom: 75px;
-
   background-color: #052D49;
   color: white;
 }
-
 .greyBg {
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: #F3F4F5;
 }
-
 #perksUl{
   position: relative;
   right: 90px;
   list-style: none;
   padding-top: 10px
 }
-
 li {
   font-weight: bold;
   padding-bottom: 25px
@@ -48,10 +39,20 @@ li {
 .creatorCard {
   width: 600px;
 }
+.creatorCard {
+  width: 600px;
+}
 .creatorImg {
   width: 275px;
 }
-
 .creatorNameOrg {
   color: #F96854;
+}
+.icon {
+  padding-top: 4px;
+  padding-right: 2px;
+  float: left;
+}
+.creatorHeading {
+  padding-bottom: 10px;
 }

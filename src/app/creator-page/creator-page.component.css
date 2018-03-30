@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    color: white;
+    background-color: #052D49
+}
