@@ -1,12 +1,21 @@
 .wrapper {
-  position: absolute;
+  /* position: absolute; */
 }
+
 .wrapper, #homepageImg {
   height: auto;
   width: 100%
 }
 
-#creatorsImgTitle {
+#subText {
+  text-align: center;
+}
+
+#creatorType {
+  color: #F96854;
+}
+
+/* #creatorsImgTitle {
   color: white;
   font-weight: bold;
   font-size: 50px;
@@ -16,8 +25,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -550%);
-  position: relative;
-}
+} */
 
-.card {
-}
+/* #whatButton, #startButton {
+  position: relative;
+} */
