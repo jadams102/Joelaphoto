@@ -20,40 +20,34 @@
     <h2>Create a Post!</h2>
     <form id="newPost">
       <div class="form-group">
-        <label>Post Body</label>
-        <input class="form-control" type="text" [(ngModel)]='body' [ngModelOptions]="{standalone: true}">
+        <label>Post Title</label>
+        <input class="form-control" type="text" [(ngModel)]='title' [ngModelOptions]="{standalone: true}" >
       </div>
       <div class="form-group">
         <label>Image URL</label>
         <input class="form-control" type="text" [(ngModel)]='imgUrl' [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
-        <label>Post Title</label>
-        <input class="form-control" type="text" [(ngModel)]='title' [ngModelOptions]="{standalone: true}" >
+        <label>Post Body</label>
+        <input class="form-control" type="text" [(ngModel)]='body' [ngModelOptions]="{standalone: true}">
       </div>
-
-
-
-
-
       <button (click)="submitPost(title, imgUrl, body)">Submit</button>
     </form>
   </div>
-
 </div>
-  <ul>
-    <li *ngFor="let post of posts">
-      <div class="card postCard">
-        <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
-        <div class="card-body">
-          <div class="card-title">
-            <h2>{{post.title}}</h2>
-          </div>
-          <div class="card-text">
-            <p>{{post.body}}</p>
-          </div>
+<ul>
+  <li *ngFor="let post of posts">
+    <div class="card postCard">
+      <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
+      <div class="card-body">
+        <div class="card-title">
+          <h2>{{post.title}}</h2>
         </div>
-
+        <div class="card-text">
+          <p>{{post.body}}</p>
+          <p>{{post.postDate}}</p>
+        </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </li>
+</ul>

@@ -19,8 +19,11 @@ export class CreatorPageComponent implements OnInit {
   }
 
   submitPost(title: string, imgUrl: string, body: string) {
+    let currentDate = new Date();
+    let dateString = currentDate.getMonth() + "/" + currentDate.getDate() + "/" + currentDate.getFullYear()
     let newPost = new Post(title, imgUrl, body);
-    this.posts.push(newPost);
+    newPost.postDate = dateString;
+    this.posts.unshift(newPost);
   }
 
 }
