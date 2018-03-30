@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <nav id="sidebar">
     <ul class="list-unstyled components">
       <li>YOUR NAME HERE</li>
@@ -11,4 +11,25 @@
       <li>SETTINGS</li>
     </ul>
   </nav>
-</div>
+</div> -->
+<br>
+<br>
+<br>
+  Add a post!
+
+  <ul>
+    <li *ngFor="let post of posts">
+      <div class="card postCard">
+        <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
+        <div class="card-title">
+          <h2>{{post.title}}</h2>
+        </div>
+        <div class="card-body">
+          <p>{{post.body}}</p>
+        </div>
+        <div class="card-body">
+
+        </div>
+      </div>
+    </li>
+  </ul>
