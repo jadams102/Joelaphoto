@@ -19,8 +19,8 @@ export class CreatorPageComponent implements OnInit {
   }
 
   submitPost(title: string, imgUrl: string, body: string) {
-    let newPost: new Post(title, imgUrl, body);
-    posts.push(newPost);
+    let newPost = new Post(title, imgUrl, body);
+    this.posts.push(newPost);
   }
 
 }
