@@ -11,8 +11,21 @@
   text-align: center;
 }
 
+#subTextPanel {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 #creatorType {
   color: #F96854;
+}
+
+#blueBg {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  background-color: #052D49;
+  color: white;
 }
 
 /* #creatorsImgTitle {
