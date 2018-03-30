@@ -11,15 +11,15 @@ This is a rebuild of the website Patreon.com. The site will allow "creators" to 
 
 *GitHub repo:* https://github.com/joelaphoto/PatreonRebuild
 
-## Completed Features
+### Completed Features
 1. Static Top Navbar
 3. Image/Text Posting through image URL's
 
-## Features in Progress
+### Features in Progress
 1. Landing/Welcome Page
 2. Creator Page
 
-## Planned Features
+### Planned Features
 1. User Feed w/ Posts
 2. Image/Text Posting through Firebase
 

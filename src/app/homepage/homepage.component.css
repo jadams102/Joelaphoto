@@ -5,8 +5,43 @@
   height: auto;
   width: 100%
 }
-#subText, #tools, #meet {
+#creatorsImgTitle, #subText, #tools, #meet {
   text-align: center;
+}
+
+#buttonWrapper {
+  position: relative;
+  margin-left: 39%;
+  margin-right: 39%;
+  bottom: 325px;
+}
+
+#whatButton, #startButton {
+  width: 175px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+}
+
+#startButton {
+  background-color: #F96C59;
+  color: white;
+}
+
+#whatButton {
+  background-color: #E7ECF0;
+  color: #48657A;
+}
+
+#creatorsImgTitle {
+  color: white;
+  position: relative;
+  font-size: 45px;
+  font-weight: bold;
+  bottom: 350px;
 }
 .whiteBg {
   padding-top: 50px;
