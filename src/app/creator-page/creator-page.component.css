@@ -4,8 +4,13 @@
 
 }
 
+li{
+  list-style: none;
+}
+
 .postCard {
   width: 500px;
+  margin-bottom: 30px;
 }
 
 #sidebar {
