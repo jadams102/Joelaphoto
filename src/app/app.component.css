@@ -7,11 +7,11 @@
   width: 100%
 }
 
-#subText {
+#subText, #tools {
   text-align: center;
 }
 
-#subTextPanel {
+.whiteBg {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -20,12 +20,24 @@
   color: #F96854;
 }
 
-#blueBg {
+.blueBg {
   padding-top: 75px;
   padding-bottom: 75px;
 
   background-color: #052D49;
   color: white;
+}
+
+#perksUl{
+  position: relative;
+  right: 90px;
+  list-style: none;
+  padding-top: 10px
+}
+
+li {
+  font-weight: bold;
+  padding-bottom: 25px
 }
 
 /* #creatorsImgTitle {
