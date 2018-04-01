@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post.model'
+import { Post } from '../post.model';
+import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-creator-page',
   templateUrl: './creator-page.component.html',
-  styleUrls: ['./creator-page.component.css']
+  styleUrls: ['./creator-page.component.css'],
+  providers: [PostService]
 })
 
 export class CreatorPageComponent implements OnInit {
-  posts: Post[] = [
-    new Post('New Stuff!', 'https://i.imgur.com/VmDTdtZ.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-    new Post('Hey look another post!','https://i.imgur.com/Zf2iBoy.jpg','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-    new Post('Hey look more posts!','https://i.imgur.com/RJ0cDi3.jpg','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-  ];
-  constructor() { }
+  posts: FirebaseListObservable<any[]>;
+  constructor(private router: Router, private postService: PostService) {}
 
   ngOnInit() {
+    this.posts = this.postService.getPosts();
   }
 
-  submitPost(title: string, imgUrl: string, body: string) {
-    let currentDate = new Date();
-    let dateString = currentDate.getMonth() + "/" + currentDate.getDate() + "/" + currentDate.getFullYear()
-    let newPost = new Post(title, imgUrl, body);
-    newPost.postDate = dateString;
-    this.posts.unshift(newPost);
-  }
+  // submitPost(title: string, imgUrl: string, body: string) {
+  //   const currentDate = new Date();
+  //   const dateString = currentDate.getMonth() + "/" + currentDate.getDate() + "/" + currentDate.getFullYear()
+  //   const newPost = new Post(title, imgUrl, body);
+  //   newPost.postDate = dateString;
+  //   this.posts.unshift(newPost);
+  // }
 
 }

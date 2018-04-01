@@ -1,0 +1,14 @@
+{ "posts": [{
+    "name": "New Stuff!",
+    "imgUrl": "https://i.imgur.com/VmDTdtZ.jpg",
+    "body": "this is the text body of the post!"
+    },{
+    "name": "Other new stuff!",
+    "imgUrl": "https://i.imgur.com/Zf2iBoy.jpg",
+    "body": "this is the text body of the post!"
+    },{
+    "name": "If you're seeing this ITS A POST!",
+    "imgUrl": "https://i.imgur.com/RJ0cDi3.jpg",
+    "body": "test info for posts!"
+  }]
+}

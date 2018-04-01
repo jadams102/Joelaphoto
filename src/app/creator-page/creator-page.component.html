@@ -36,7 +36,7 @@
   </div>
 </div>
 <ul>
-  <li *ngFor="let post of posts">
+  <li *ngFor="let post of posts | async">
     <div class="card postCard">
       <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
       <div class="card-body">

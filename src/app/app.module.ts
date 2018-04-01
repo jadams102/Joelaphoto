@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CreatorPageComponent } from './creator-page/creator-page.component';
 import { AddPostComponent } from './add-post/add-post.component';
-import { masterFirebaseConfig } from './api-keys';
+import { config } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
