@@ -27,7 +27,19 @@ This is a rebuild of the website Patreon.com. The site will allow "creators" to 
 Requires Node.js, Angular CLI
 
 1. Download or clone Github respository.
-2. Create a file titled .env in the DoctorLookup directory and add exports.apiKey = [BetterDoctor API KEY GOES HERE] and exports.mapsApiKey = [Google Geocoding API KEY GOES HERE]
+2. Create a file called api-keys.ts in src/app/
+3. Login to Firebase and create a project, select add to web app, and copy the provided code formatted as the following into api-keys.ts:
+```
+export const config = {
+  apiKey: 'XXXXXXXXXXXXXXXXXX',
+  authDomain: 'XXXXXXXXXXXXXXXX',
+  databaseURL: 'XXXXXXXXXXXXXXXX',
+  projectId: 'XXXXXXXXXXXXXXXX',
+  storageBucket: 'XXXXXXXXXXXXXXX',
+  messagingSenderId: 'XXXXXXXXXXXXXXX'
+};
+firebase.initializeApp(config);
+```
 2. Run $ npm install in command line, terminal, or GitBash.
 3. Run $ ng serve
 
