@@ -19,12 +19,12 @@ export class CreatorPageComponent implements OnInit {
     this.posts = this.postService.getPosts();
   }
 
-  // submitPost(title: string, imgUrl: string, body: string) {
-  //   const currentDate = new Date();
-  //   const dateString = currentDate.getMonth() + "/" + currentDate.getDate() + "/" + currentDate.getFullYear()
-  //   const newPost = new Post(title, imgUrl, body);
-  //   newPost.postDate = dateString;
-  //   this.posts.unshift(newPost);
-  // }
+  submitPost(title: string, imgUrl: string, body: string) {
+    const currentDate = new Date();
+    const dateString = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
+    const newPost = new Post(title, imgUrl, body);
+    newPost.postDate = dateString;
+    this.postService.addPost(newPost);
+  }
 
 }
