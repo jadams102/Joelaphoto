@@ -38,7 +38,6 @@ export const config = {
   storageBucket: 'XXXXXXXXXXXXXXX',
   messagingSenderId: 'XXXXXXXXXXXXXXX'
 };
-firebase.initializeApp(config);
 ```
 2. Run $ npm install in command line, terminal, or GitBash.
 3. Run $ ng serve
