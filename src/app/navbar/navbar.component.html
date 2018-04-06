@@ -5,9 +5,15 @@
       </a>
     </div>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item" ><input class="form-control" type="text" name="Search" placeholder="Search"></li>
+      <!-- <li class="nav-item" ><input class="form-control" type="text" name="Search" placeholder="Search"></li> -->
       <li class="nav-item" ><a class="nav-link" (click)="getTags()">Browse Tags</a></li>
-      <li class="nav-item" ><a class="nav-link" routerLink="admin">Admin</a></li>
+      <div *ngIf="!isLoggedIn">
+        <li class="nav-item" ><a class="nav-link" (click)='login()'>Log In</a></li>
+      </div>
+      <div *ngIf="isLoggedIn">
+        <li class="nav-item" ><a class="nav-link" routerLink="admin">Admin</a></li>
+        <li class="nav-item" ><a class="nav-link" (click)='logout()'>Log Out</a></li>
+      </div>
     </ul>
 </nav>
 <div *ngIf="isBrowsingTags">

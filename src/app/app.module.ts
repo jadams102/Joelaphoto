@@ -13,6 +13,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 import { TagComponent } from './tag/tag.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthenticationService } from './services/authentication.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -40,7 +45,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthenticationService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,19 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { PostService } from '../services/post.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  providers: [ PostService ]
+  providers: [ PostService, AuthenticationService, AngularFireAuth ]
 })
 export class NavbarComponent implements OnInit {
   tagsArray: string[] = [];
-  isBrowsingTags: boolean = false;
+  private isBrowsingTags: boolean = false;
+  private isLoggedIn: Boolean;
   posts;
+  user;
+  userName: string;
 
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private postService: PostService, private router: Router) {
+    this.authService.user.subscribe(user => {
+         if (user == null) {
+           this.isLoggedIn = false;
+         } else {
+           this.isLoggedIn = true;
+           this.userName = user.displayName;
+         }
+       });
+   }
 
   ngOnInit() {
     this.posts = this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
@@ -42,5 +57,12 @@ export class NavbarComponent implements OnInit {
     } else {
       this.isBrowsingTags = false;
     }
+  }
+  login() {
+    this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

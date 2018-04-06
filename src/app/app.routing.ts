@@ -6,6 +6,9 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 import { TagComponent } from './tag/tag.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthGuard } from './services/auth-guard.service';
+
 
 
 const appRoutes: Routes = [
@@ -15,11 +18,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'posts/:id',
-    component: PostDetailComponent
+    component: PostDetailComponent,
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'tag/:selectedTag',
@@ -27,11 +31,13 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin/posts/:id',
-    component: AdminDetailComponent
+    component: AdminDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/add',
-    component: AddPostComponent
+    component: AddPostComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
