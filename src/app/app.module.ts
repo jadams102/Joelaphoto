@@ -9,6 +9,7 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { config } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -23,7 +24,8 @@ export const firebaseConfig = {
     AppComponent,
     HomepageComponent,
     CreatorPageComponent,
-    AddPostComponent
+    AddPostComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
