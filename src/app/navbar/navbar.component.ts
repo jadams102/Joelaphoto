@@ -14,12 +14,16 @@ export class NavbarComponent implements OnInit {
   isBrowsingTags: boolean = false;
   posts;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   ngOnInit() {
     this.posts = this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
       this.posts = dataLastEmittedFromObserver;
     });
+  }
+
+  showTag(tag: string) {
+    this.router.navigate(['tag', tag]);
   }
 
 

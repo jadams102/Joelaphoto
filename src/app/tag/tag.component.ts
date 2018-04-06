@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { PostService } from '../services/post.service';
 import { Post } from '../models/post.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tag',
@@ -11,28 +12,24 @@ import { Router } from '@angular/router';
   providers: [ PostService ],
 })
 export class TagComponent implements OnInit {
-  posts;
-  tagsArray: string[] = [];
+  posts: FirebaseListObservable<any[]>;
+  selectedTag: string;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService; private route: ActivatedRoute; private location: Location) {}
 
   ngOnInit() {
-    this.posts = this.postService.getPosts().subscribe(dataLastEmittedFromObserver => {
-      this.posts = dataLastEmittedFromObserver;
-    });
+    this.route.params.forEach((urlParameters) => {
+     this.selectedTag = urlParameters['selectedTag'];
+   });
+   this.posts = this.postService.getPosts();
+    }
 
-  }
-
-  getTags() {
-    for (let i = 0; i < this.posts.length; i++) {
-      for (let j = 0; j < this.posts[i].tags.length; j++) {
-        const tag = this.posts[i].tags[j];
-        if (!this.tagsArray.includes(tag)) {
-          this.tagsArray.push(tag);
-          console.log(tag);
-        }
+    containsTag(tags) {
+      if (tags.includes(this.selectedTag)) {
+        return true;
+      } else {
+        return false;
       }
     }
-  }
 
 }
