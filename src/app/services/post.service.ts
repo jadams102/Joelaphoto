@@ -10,11 +10,15 @@ export class PostService {
       this.posts = database.list('posts');
     }
 
-    getPosts() {
+  getPosts() {
     return this.posts;
   }
 
   addPost(newPost: Post) {
     this.posts.push(newPost);
+  }
+
+  getPostById(postId: string) {
+    return this.database.object('posts/' + postId);
   }
 }
