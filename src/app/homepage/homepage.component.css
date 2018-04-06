@@ -5,89 +5,15 @@
   height: auto;
   width: 100%
 }
-#creatorsImgTitle, #subText, #tools, #meet {
-  text-align: center;
-}
 
-#buttonWrapper {
-  position: relative;
-  margin-left: 39%;
-  margin-right: 39%;
-  bottom: 325px;
-}
-
-#whatButton, #startButton {
-  width: 175px;
-  height: 50px;
-  margin-left: 10px;
-  margin-right: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 0px;
-}
-
-#startButton {
-  background-color: #F96C59;
-  color: white;
-}
-
-#whatButton {
-  background-color: #E7ECF0;
-  color: #48657A;
-}
-
-#creatorsImgTitle {
-  color: white;
-  position: relative;
-  font-size: 45px;
-  font-weight: bold;
-  bottom: 350px;
-}
 .whiteBg {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-#creatorType {
-  color: #F96854;
-}
-.blueBg {
-  padding-top: 75px;
-  padding-bottom: 75px;
-  background-color: #052D49;
-  color: white;
-}
-.greyBg {
-  padding-top: 75px;
-  padding-bottom: 75px;
-  background-color: #F3F4F5;
-}
-#perksUl{
-  position: relative;
-  right: 90px;
-  list-style: none;
-  padding-top: 10px
-}
-li {
-  font-weight: bold;
-  padding-bottom: 25px
-}
-.creatorCard {
-  width: 600px;
-}
-.creatorCard {
-  width: 600px;
-}
-.creatorImg {
-  width: 275px;
-}
-.creatorNameOrg {
-  color: #F96854;
-}
-.icon {
-  padding-top: 4px;
-  padding-right: 2px;
-  float: left;
-}
-.creatorHeading {
-  padding-bottom: 10px;
+
+.post-card {
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

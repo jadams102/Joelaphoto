@@ -22,6 +22,9 @@ This is a rebuild of the website Patreon.com. The site will allow "creators" to 
 ### Planned Features
 1. User Feed w/ Posts
 2. Image/Text Posting through Firebase
+3. Pledge level post restrictions
+4. Separate Admin component for site owner
+5. Authorization and guards for login
 
 ## Setup/Installation Requirements
 Requires Node.js, Angular CLI
