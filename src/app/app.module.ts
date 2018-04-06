@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     AddPostComponent,
     NavbarComponent,
     PostDetailComponent,
-    AdminDetailComponent
+    AdminDetailComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

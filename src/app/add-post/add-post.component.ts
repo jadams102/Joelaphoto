@@ -9,10 +9,17 @@ import { PostService } from '../services/post.service';
   providers: [PostService]
 })
 export class AddPostComponent implements OnInit {
+  tags: string[];
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+  }
+
+  addTags(tags: string) {
+    const scrubbedTagString = (tags.toLowerCase()).replace(/\s/g, '');
+    const tagsArray = scrubbedTagString.split(',');
+    this.tags = tagsArray;
   }
 
   submitPost(title: string, imgUrl: string, body: string) {

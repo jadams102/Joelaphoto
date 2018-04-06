@@ -13,6 +13,16 @@
         <label>Post Body</label>
         <input class="form-control" type="text" #newBody >
       </div>
+      <div class="form-group">
+        <label>Add Tags:</label>
+        <input #newTags>
+        <button (click)="addTags(newTags.value); newTags.value='';" type="button" name="button">Add Tags</button>
+        <ul>
+          <div *ngFor = "let tag of tags">
+            <li>{{tag}}</li>
+          </div>
+        </ul>
+      </div>
     <button (click)="submitPost(newTitle.value, newImgUrl.value, newBody.value)" routerLink="/admin">Submit</button>
   </div>
 </div>

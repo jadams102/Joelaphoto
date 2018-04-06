@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AdminDetailComponent } from './admin-detail/admin-detail.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,10 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent
   },
   {
     path: 'admin/posts/:id',
