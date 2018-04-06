@@ -1,20 +1,19 @@
-<div class="adminOptions">
-  <button type="button" class="btn btn-dark" routerLink="add">ADD POST</button>
-</div>
-<ul>
-  <li *ngFor="let post of posts | async">
-    <div class="card postCard">
-      <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
-      <div class="card-body">
-        <div class="card-title">
-          <h2>{{post.title}}</h2>
-        </div>
-        <div class="card-text">
-          <p>{{post.body}}</p>
-          <p>{{post.postDate}}</p>
-        </div>
-      <button type="button" name="button" (click)='goToAdminDetailPage(post)'>Edit Post</button>
+<div class="container">
+  <div class="adminOptions">
+    <button type="button" class="btn btn-dark" routerLink="add">ADD POST</button>
+  </div>
+  <div *ngFor="let post of posts | async" class="card postCard">
+    <img class="card-img-top" src="{{post.imgUrl}}" alt="Post Image">
+    <div class="card-body">
+      <div class="card-title">
+        <h2>{{post.title}}</h2>
       </div>
+      <div class="card-text">
+        <p>{{post.body}}</p>
+        <p>{{post.postDate}}</p>
+      </div>
+    <button type="button" name="button" class="btn btn-dark" (click)='goToAdminDetailPage(post)'>Edit Post</button>
+    <button type="button" name="button" class="btn btn-danger" (click)='deletePost(post)'>Delete Post</button>
     </div>
-  </li>
-</ul>
+  </div>
+</div>

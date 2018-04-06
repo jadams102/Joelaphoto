@@ -20,6 +20,7 @@ export class AddPostComponent implements OnInit {
     const dateString = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
     const newPost = new Post(title, imgUrl, body);
     newPost.postDate = dateString;
+    console.log (newPost);
     this.postService.addPost(newPost);
   }
 }

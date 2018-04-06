@@ -20,7 +20,13 @@ export class AdminComponent implements OnInit {
   }
 
   goToAdminDetailPage(post) {
-    this.router.navigate(['admin', post.$key]);
+    this.router.navigate(['admin', 'posts', post.$key]);
+  }
+
+  deletePost(post) {
+    if (confirm('Are you sure you want to delete this post')) {
+      this.postService.deletePost(post);
+    }
   }
 
 }

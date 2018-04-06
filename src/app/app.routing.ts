@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     component: AdminComponent
   },
   {
-    path: 'admin/:id',
+    path: 'admin/posts/:id',
     component: AdminDetailComponent
   },
   {

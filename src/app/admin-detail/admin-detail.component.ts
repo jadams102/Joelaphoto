@@ -27,10 +27,12 @@ export class AdminDetailComponent implements OnInit {
   }
 
   updatePost() {
-    this.postService.updatePost(this.postToDisplay);
+    if (confirm('Save changes to post?')) {
+      this.postService.updatePost(this.postToDisplay);
+    }
   }
 
-  deletePost(){
+  deletePost() {
     if (confirm('Are you sure you want to delete this post?')) {
       this.postService.deletePost(this.postToDisplay);
       this.router.navigate(['admin']);

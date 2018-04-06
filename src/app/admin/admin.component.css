@@ -1,7 +1,15 @@
 .wrapper {
     display: flex;
     min-height: 100vh;
+}
 
+.adminOptions {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 5px;
+  border-width: thin;
 }
 
 li{
@@ -11,11 +19,4 @@ li{
 .postCard {
   width: 500px;
   margin-bottom: 30px;
-}
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    color: white;
-    background-color: #052D49
 }
