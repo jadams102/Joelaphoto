@@ -32,6 +32,20 @@ export class AdminDetailComponent implements OnInit {
     }
   }
 
+  addTags(tags: string) {
+    const tagsArray = tags.split(',');
+    for (let i = 0; i < tagsArray.length; i++) {
+      const trim = (tagsArray[i].trim()).toLowerCase();
+      this.postToDisplay.tags.push(trim);
+      }
+    this.postService.updatePostTags(this.postToDisplay);
+  }
+
+  removeTag(idx) {
+    this.postToDisplay.tags.splice(idx, 1);
+    this.postService.updatePostTags(this.postToDisplay);
+  }
+
   deletePost() {
     if (confirm('Are you sure you want to delete this post?')) {
       this.postService.deletePost(this.postToDisplay);

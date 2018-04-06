@@ -29,6 +29,10 @@ export class AddPostComponent implements OnInit {
     this.testImgURL = url;
   }
 
+  removeTag(idx) {
+    this.tags.splice(idx, 1);
+  }
+
   submitPost(title: string, imgUrl: string, body: string) {
     const currentDate = new Date();
     const dateString = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();

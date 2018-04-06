@@ -21,8 +21,8 @@
           <input #newTags>
           <button (click)="addTags(newTags.value); newTags.value='';" type="button" name="button">Add Tags</button>
           <ul>
-            <div *ngFor = "let tag of tags">
-              <li>{{tag}}</li>
+            <div *ngFor = "let tag of tags; let idx = index">
+              <li>{{tag}} <button (click)="removeTag(idx)">Remove</button> </li>
             </div>
           </ul>
         </div>
