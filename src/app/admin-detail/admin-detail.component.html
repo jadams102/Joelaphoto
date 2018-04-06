@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="card">
+    <div class="card-title">
+      <h1>Edit Post</h1>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label>Enter Title:</label>
+            <input class="form-control" [(ngModel)]="postToDisplay.title">
+          </div>
+          <div class="form-group">
+            <label>Enter Body:</label>
+            <textarea class="form-control" [(ngModel)]="postToDisplay.body"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Enter Image URL:</label>
+            <input class="form-control" [(ngModel)]="postToDisplay.imgUrl">
+          </div>
+          <button type="button" name="button" class="btn btn-dark" (click)=updatePost()>Update Post</button>
+          <button type="button" name="button" class="btn btn-dark" routerLink="/admin">Return to Admin</button>
+        </div>
+        <div class="col-md-4">
+          <img id="detailImg" src="{{postToDisplay?.imgUrl}}" alt="">
+          <h6>Current Post Image</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

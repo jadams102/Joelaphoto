@@ -1,3 +1,10 @@
-<p>
-  post-detail works!
-</p>
+<div class="container">
+  <div class="card post-card">
+    <img src="{{(postToDisplay | async)?.imgUrl}}" class="card-img-top" alt="post image">
+    <div class="card-body">
+      <h1>{{(postToDisplay | async)?.title}}</h1>
+      <p>{{(postToDisplay | async)?.body}}</p>
+      <h6></h6>
+    </div>
+  </div>
+</div>

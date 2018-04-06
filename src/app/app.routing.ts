@@ -1,9 +1,10 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CreatorPageComponent } from './creator-page/creator-page.component';
+import { AdminComponent } from './admin/admin.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 
 
 const appRoutes: Routes = [
@@ -17,7 +18,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: CreatorPageComponent
+    component: AdminComponent
+  },
+  {
+    path: 'admin/:id',
+    component: AdminDetailComponent
   },
   {
     path: 'admin/add',

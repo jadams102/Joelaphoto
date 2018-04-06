@@ -21,4 +21,9 @@ export class PostService {
   getPostById(postId: string) {
     return this.database.object('posts/' + postId);
   }
+
+  updatePost(localUpdatedPost) {
+    const postEntryInFirebase = this.getPostById(localUpdatedPost.$key);
+    postEntryInFirebase.update({title: localUpdatedPost.title, body: localUpdatedPost.body, imgUrl: localUpdatedPost.imgUrl});
+  }
 }

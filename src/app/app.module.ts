@@ -4,13 +4,14 @@ import { routing } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CreatorPageComponent } from './creator-page/creator-page.component';
+import { AdminComponent } from './admin/admin.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { config } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { AdminDetailComponent } from './admin-detail/admin-detail.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -24,10 +25,11 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomepageComponent,
-    CreatorPageComponent,
+    AdminComponent,
     AddPostComponent,
     NavbarComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    AdminDetailComponent
   ],
   imports: [
     BrowserModule,
