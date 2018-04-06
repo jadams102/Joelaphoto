@@ -4,17 +4,17 @@
     <form id="newPost">
       <div class="form-group">
         <label>Post Title</label>
-        <input class="form-control" type="text" [(ngModel)]='title' [ngModelOptions]="{standalone: true}" >
+        <input class="form-control" type="text" #newTitle >
       </div>
       <div class="form-group">
         <label>Image URL</label>
-        <input class="form-control" type="text" [(ngModel)]='imgUrl' [ngModelOptions]="{standalone: true}">
+        <input class="form-control" type="text" #newImgUrl>
       </div>
       <div class="form-group">
         <label>Post Body</label>
-        <input class="form-control" type="text" [(ngModel)]='body' [ngModelOptions]="{standalone: true}">
+        <input class="form-control" type="text" #newBody >
       </div>
-      <button (click)="submitPost(title, imgUrl, body)">Submit</button>
+      <button (click)="submitPost(title, imgUrl, body)" routerLink="/admin">Submit</button>
     </form>
   </div>
 </div>
