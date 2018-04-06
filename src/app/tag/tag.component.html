@@ -1,0 +1,8 @@
+<div class="categoriesBar">
+  <button type="button" class="btn btn-dark" name="button"(click)="getTags()">Show Tags</button>
+  <ul>
+    <li class="tag" *ngFor="let tag of tagsArray">
+      {{tag}}
+    </li>
+  </ul>
+</div>

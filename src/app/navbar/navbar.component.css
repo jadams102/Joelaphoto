@@ -1,0 +1,10 @@
+.tag {
+  color: black;
+  margin-left: 10px;
+  background: lightgrey;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
