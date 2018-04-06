@@ -9,11 +9,12 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./post-detail.component.css'],
   providers: [PostService]
 })
+
 export class PostDetailComponent implements OnInit {
   postId: string;
-  postToDisplay:
+  postToDisplay;
 
-  constructor (private route: ActivatedRoute, private location: Location, private postService: postService) { }
+  constructor (private route: ActivatedRoute, private location: Location, private postService: PostService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
