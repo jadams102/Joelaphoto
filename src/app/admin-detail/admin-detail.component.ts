@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { PostService } from '../services/post.service';
 
@@ -15,7 +15,7 @@ export class AdminDetailComponent implements OnInit {
   postId: string;
   postToDisplay;
 
-  constructor (private route: ActivatedRoute, private location: Location, private postService: PostService) { }
+  constructor (private route: ActivatedRoute, private router: Router, private location: Location, private postService: PostService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -28,6 +28,13 @@ export class AdminDetailComponent implements OnInit {
 
   updatePost() {
     this.postService.updatePost(this.postToDisplay);
+  }
+
+  deletePost(){
+    if (confirm('Are you sure you want to delete this post?')) {
+      this.postService.deletePost(this.postToDisplay);
+      this.router.navigate(['admin']);
+    }
   }
 
 }
