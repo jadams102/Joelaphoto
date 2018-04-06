@@ -1,28 +1,38 @@
 <div class="card">
   <div class="card-body">
     <h2>Create a Post!</h2>
-      <div class="form-group">
-      <label>Post Title</label>
-      <input class="form-control" type="text" #newTitle >
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group">
+        <label>Post Title</label>
+        <input class="form-control" type="text" #newTitle >
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input class="form-control" type="text" #newImgUrl>
+          <button type="button" name="button" (click)="loadTestUrl(newImgUrl.value)">Test Image Link</button>
+        </div>
+        <div class="form-group">
+          <label>Post Body</label>
+          <input class="form-control" type="text" #newBody >
+        </div>
+        <div class="form-group">
+          <label>Add Tags ( Separate tags with ',' ) :</label>
+          <input #newTags>
+          <button (click)="addTags(newTags.value); newTags.value='';" type="button" name="button">Add Tags</button>
+          <ul>
+            <div *ngFor = "let tag of tags">
+              <li>{{tag}}</li>
+            </div>
+          </ul>
+        </div>
+        <button (click)="submitPost(newTitle.value, newImgUrl.value, newBody.value)" routerLink="/admin">Submit</button>
       </div>
-      <div class="form-group">
-        <label>Image URL</label>
-        <input class="form-control" type="text" #newImgUrl>
+      <div class="col-md-4">
+        <img id="detailImg" src="{{testImgURL}}" alt="">
+        <h6>Current Post Image</h6>
       </div>
-      <div class="form-group">
-        <label>Post Body</label>
-        <input class="form-control" type="text" #newBody >
-      </div>
-      <div class="form-group">
-        <label>Add Tags:</label>
-        <input #newTags>
-        <button (click)="addTags(newTags.value); newTags.value='';" type="button" name="button">Add Tags</button>
-        <ul>
-          <div *ngFor = "let tag of tags">
-            <li>{{tag}}</li>
-          </div>
-        </ul>
-      </div>
-    <button (click)="submitPost(newTitle.value, newImgUrl.value, newBody.value)" routerLink="/admin">Submit</button>
+    </div>
+
   </div>
 </div>

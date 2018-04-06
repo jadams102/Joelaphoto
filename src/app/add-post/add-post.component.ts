@@ -9,7 +9,8 @@ import { PostService } from '../services/post.service';
   providers: [PostService]
 })
 export class AddPostComponent implements OnInit {
-  tags: string[];
+  tags: string[] = [];
+  testImgURL: string;
 
   constructor(private postService: PostService) { }
 
@@ -17,15 +18,21 @@ export class AddPostComponent implements OnInit {
   }
 
   addTags(tags: string) {
-    const scrubbedTagString = (tags.toLowerCase()).replace(/\s/g, '');
-    const tagsArray = scrubbedTagString.split(',');
-    this.tags = tagsArray;
+    const tagsArray = tags.split(',');
+    for (let i = 0; i < tagsArray.length; i++) {
+      const trim = (tagsArray[i].trim()).toLowerCase();
+      this.tags.push(trim);
+      }
+  }
+
+  loadTestUrl(url: string) {
+    this.testImgURL = url;
   }
 
   submitPost(title: string, imgUrl: string, body: string) {
     const currentDate = new Date();
     const dateString = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
-    const newPost = new Post(title, imgUrl, body);
+    const newPost = new Post(title, imgUrl, body, this.tags);
     newPost.postDate = dateString;
     console.log (newPost);
     this.postService.addPost(newPost);
