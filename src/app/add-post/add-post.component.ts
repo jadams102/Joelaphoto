@@ -10,11 +10,12 @@ import { PostService } from '../services/post.service';
 })
 export class AddPostComponent implements OnInit {
   tags: string[] = [];
-  testImgURL = 'https://i.imgur.com/ujBlDNz.jpg';
+  testImgURL;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.testImgURL = 'https://i.imgur.com/ujBlDNz.jpg';
   }
 
   addTags(tags: string) {
