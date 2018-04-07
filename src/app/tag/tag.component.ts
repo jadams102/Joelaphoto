@@ -15,7 +15,7 @@ export class TagComponent implements OnInit {
   posts: FirebaseListObservable<any[]>;
   selectedTag: string;
 
-  constructor(private postService: PostService, private route: ActivatedRoute, private location: Location) {}
+  constructor(private postService: PostService, private router: Router, private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -30,6 +30,10 @@ export class TagComponent implements OnInit {
       } else {
         return false;
       }
+    }
+
+    goToDetailPage(post) {
+      this.router.navigate(['posts', post.$key]);
     }
 
 }

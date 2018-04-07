@@ -39,6 +39,7 @@ export class NavbarComponent implements OnInit {
 
   showTag(tag: string) {
     this.router.navigate(['tag', tag]);
+    this.isBrowsingTags = false;
   }
 
 
@@ -50,7 +51,6 @@ export class NavbarComponent implements OnInit {
           const tag = this.posts[i].tags[j];
           if (!this.tagsArray.includes(tag)) {
             this.tagsArray.push(tag);
-            console.log(tag);
           }
         }
       }

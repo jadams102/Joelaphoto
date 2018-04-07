@@ -10,7 +10,7 @@ import { PostService } from '../services/post.service';
 })
 export class AddPostComponent implements OnInit {
   tags: string[] = [];
-  testImgURL: string;
+  testImgURL = 'https://i.imgur.com/ujBlDNz.jpg';
 
   constructor(private postService: PostService) { }
 
@@ -38,7 +38,6 @@ export class AddPostComponent implements OnInit {
     const dateString = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
     const newPost = new Post(title, imgUrl, body, this.tags);
     newPost.postDate = dateString;
-    console.log (newPost);
     this.postService.addPost(newPost);
   }
 }
