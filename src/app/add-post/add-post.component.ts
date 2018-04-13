@@ -22,7 +22,8 @@ export class AddPostComponent implements OnInit {
     const tagsArray = tags.split(',');
     for (let i = 0; i < tagsArray.length; i++) {
       const trim = (tagsArray[i].trim()).toLowerCase();
-      this.tags.push(trim);
+      if (!tagsArray.contains(trim)) {
+        this.tags.push(trim);
       }
   }
 
