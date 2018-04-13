@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 
 export class HomepageComponent implements OnInit {
   posts: FirebaseListObservable<any[]>;
+  selectedPost;
 
   constructor(private postService: PostService, private router: Router) { }
 
@@ -22,6 +23,16 @@ export class HomepageComponent implements OnInit {
 
   goToDetailPage(post) {
     this.router.navigate(['posts', post.$key]);
+  }
+
+  addComment(comment: string) {
+    console.log(comment);
+  }
+
+  likePost(post) {
+    this.selectedPost = post;
+    this.selectedPost.likes ++;
+    this.postService.updateLikes(this.selectedPost);
   }
 
 }

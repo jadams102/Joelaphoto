@@ -27,6 +27,11 @@ export class PostService {
     postEntryInFirebase.update({tags: localUpdatedPost.tags});
   }
 
+  updateLikes(localUpdatedPost) {
+    const postEntryInFirebase = this.getPostById(localUpdatedPost.$key);
+    postEntryInFirebase.update({likes: localUpdatedPost.likes});
+  }
+
   updatePost(localUpdatedPost) {
     const postEntryInFirebase = this.getPostById(localUpdatedPost.$key);
     postEntryInFirebase.update({title: localUpdatedPost.title,

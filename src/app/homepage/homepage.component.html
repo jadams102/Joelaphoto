@@ -10,7 +10,11 @@
           <h1>{{post.title}}</h1>
           <p>{{post.body}}</p>
           <h6>{{post.postDate}}</h6>
-          <button type="button" name="button" class="btn btn-dark" (click)="goToDetailPage(post)">View Post</button>
+          <button class="btn btn-dark" (click)="goToDetailPage(post)">View Post</button>
+          <button class="btn btn-light" (click)="likePost(post)">Like Post</button>
+          <p>Likes: {{post.likes}}</p>
+          <input type="text" #newComment>
+          <button (click)='addComment(post, newComment.value)'>Add Comment</button>
         </div>
       </div>
     </div>
