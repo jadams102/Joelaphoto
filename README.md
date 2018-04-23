@@ -27,6 +27,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. User Feed w/ Posts
 2. Image/Text Posting through Firebase
 3. Pledge level post restrictions
+4. Integrate Patreon API to allow only patrons access to pledge restricted posts
+5. oAuth integration
 
 ## Setup/Installation Requirements
 Requires Node.js, Angular CLI
